@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://btu464qp8p4cy"]
+
+[ext_resource type="Script" path="res://Common/Interface/Beats/button.gd" id="1_aiocq"]
+[ext_resource type="Texture2D" uid="uid://c020vxl68ex5q" path="res://Common/Interface/Beats/beats.png" id="2_x7w1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p75di"]
+size = Vector2(8.06557, 1.20603)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqrd1"]
+size = Vector2(62, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fshm"]
+size = Vector2(62, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bybql"]
+size = Vector2(62, 34)
+
+[node name="Button" type="Node2D"]
+script = ExtResource("1_aiocq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(54, 37)
+scale = Vector2(7.625, 6.21875)
+texture = ExtResource("2_x7w1v")
+hframes = 3
+vframes = 4
+
+[node name="Perfect" type="Area2D" parent="."]
+position = Vector2(54, 37)
+scale = Vector2(7.625, 6.21875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perfect"]
+position = Vector2(0.688524, 0.522613)
+shape = SubResource("RectangleShape2D_p75di")
+
+[node name="Good" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Good"]
+position = Vector2(59, 40)
+shape = SubResource("RectangleShape2D_sqrd1")
+
+[node name="Okay" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Okay"]
+position = Vector2(59, 40)
+shape = SubResource("RectangleShape2D_3fshm")
+
+[node name="Miss" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Miss"]
+position = Vector2(59, 40)
+shape = SubResource("RectangleShape2D_bybql")
+
+[connection signal="area_entered" from="Perfect" to="." method="_on_perfect_area_entered"]
+[connection signal="area_exited" from="Perfect" to="." method="_on_perfect_area_exited"]
+[connection signal="area_entered" from="Good" to="." method="_on_good_area_entered"]
+[connection signal="area_exited" from="Good" to="." method="_on_good_area_exited"]
+[connection signal="area_entered" from="Okay" to="." method="_on_okay_area_entered"]
+[connection signal="area_exited" from="Okay" to="." method="_on_okay_area_exited"]
+[connection signal="area_entered" from="Miss" to="." method="_on_miss_area_entered"]
+[connection signal="area_exited" from="Miss" to="." method="_on_miss_area_exited"]
