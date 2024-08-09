@@ -1,14 +1,15 @@
 extends Node2D
 
-var is_perfect_note = false
-var is_good_note = false
-var is_okay_note = false
-var is_miss_note = false
+var is_perfect_note: bool = false
+var is_good_note: bool = false
+var is_okay_note: bool = false
+var is_miss_note: bool = false
 
 func _input(event) -> void:
 	if event.is_action_pressed("j-key"):
 		if is_perfect_note:
 			print("perfect")
+			Signals.emit_signal("on_combo_increment")
 		elif is_good_note:
 			print("good")
 		elif is_okay_note:

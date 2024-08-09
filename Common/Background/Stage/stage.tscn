@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4uyra06p5ay"]
+[gd_scene load_steps=4 format=3 uid="uid://d4uyra06p5ay"]
 
 [ext_resource type="PackedScene" uid="uid://ctw0ewxcb517l" path="res://Common/Interface/Beats/note.tscn" id="1_eelwy"]
 [ext_resource type="PackedScene" uid="uid://btu464qp8p4cy" path="res://Common/Interface/Beats/button.tscn" id="2_mdikm"]
+[ext_resource type="PackedScene" uid="uid://c2aafyr4fn65k" path="res://Common/Interface/GameplayUI/ui.tscn" id="3_8pipn"]
 
 [node name="Stage" type="Node2D"]
 
 [node name="Note" parent="." instance=ExtResource("1_eelwy")]
-position = Vector2(889, 95)
+position = Vector2(885, 464)
 
 [node name="Button" parent="." instance=ExtResource("2_mdikm")]
 position = Vector2(890, 573)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("3_8pipn")]

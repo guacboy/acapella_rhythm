@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2aafyr4fn65k"]
+
+[ext_resource type="Theme" uid="uid://c2vxnjjugyouy" path="res://default.tres" id="1_kj36l"]
+[ext_resource type="Script" path="res://Common/Interface/GameplayUI/ui.gd" id="2_pfpxn"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchor_top = 0.79537
+anchor_right = 0.452604
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kj36l")
+script = ExtResource("2_pfpxn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Stats" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018412
+anchor_top = 0.619909
+anchor_right = 0.926352
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="RichTextLabel" parent="Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00000000"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ComboLabel" type="RichTextLabel" parent="Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0x"
+fit_content = true
