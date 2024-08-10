@@ -9,8 +9,18 @@
 [node name="Note" parent="." instance=ExtResource("1_eelwy")]
 position = Vector2(885, 464)
 
-[node name="Button" parent="." instance=ExtResource("2_mdikm")]
+[node name="Note2" parent="." instance=ExtResource("1_eelwy")]
+position = Vector2(699, 425)
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="J-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
 position = Vector2(890, 573)
+KEY = "j-key"
+
+[node name="F-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
+position = Vector2(699, 576)
+KEY = "f-key"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
