@@ -7,16 +7,16 @@
 size = Vector2(8.06557, 0.884422)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqrd1"]
-size = Vector2(62, 16)
+size = Vector2(62, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fshm"]
-size = Vector2(62, 24)
+size = Vector2(62, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bybql"]
 size = Vector2(62, 34)
 
 [node name="Button" type="Node2D"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 script = ExtResource("1_aiocq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,7 +32,6 @@ scale = Vector2(7.625, 6.21875)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Perfect"]
 position = Vector2(0.688524, 0.522613)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_p75di")
 
 [node name="Good" type="Area2D" parent="."]

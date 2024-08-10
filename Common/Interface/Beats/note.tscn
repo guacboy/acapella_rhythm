@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Common/Interface/Beats/note.gd" id="1_t2uoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntx8q"]
-size = Vector2(62, 7)
+size = Vector2(62, 2)
 
 [node name="Note" type="Node2D"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 script = ExtResource("1_t2uoj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

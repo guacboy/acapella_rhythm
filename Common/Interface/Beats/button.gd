@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var KEY: String = ""
+@export var key: String = ""
 
 var is_perfect_note: bool = false
 var is_good_note: bool = false
@@ -8,22 +8,22 @@ var is_okay_note: bool = false
 var is_miss_note: bool = false
 
 func _input(event) -> void:
-	if event.is_action_pressed(KEY):
+	if event.is_action_pressed(key):
 		if is_perfect_note:
 			print("perfect")
 			Signals.emit_signal("on_combo_increment", true)
 			Signals.emit_signal("on_score_increment", 300)
-			play_particles_after_note_hit("#75ff7a") # light green
+			play_particles_after_note_hit("#2986cc") # sea blue
 		elif is_good_note:
 			print("good")
 			Signals.emit_signal("on_combo_increment", true)
 			Signals.emit_signal("on_score_increment", 100)
-			play_particles_after_note_hit("#ffe599") # tan yellow
+			play_particles_after_note_hit("#82dd59") # green
 		elif is_okay_note:
 			print("okay")
 			Signals.emit_signal("on_combo_increment", true)
 			Signals.emit_signal("on_score_increment", 50)
-			play_particles_after_note_hit("#f6b26b") # orange-yellow
+			play_particles_after_note_hit("#f2c845") # orange-yellow
 		elif is_miss_note:
 			print("miss")
 			Signals.emit_signal("on_combo_increment", false)
