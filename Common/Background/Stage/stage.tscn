@@ -37,27 +37,27 @@ key = "l-key"
 [node name="Buttons" type="Node" parent="."]
 
 [node name="S-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
-position = Vector2(362, 566)
+position = Vector2(362, 632)
 key = "s-key"
 
 [node name="D-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
-position = Vector2(579, 566)
+position = Vector2(579, 632)
 key = "d-key"
 
 [node name="F-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
-position = Vector2(810, 566)
+position = Vector2(810, 632)
 key = "f-key"
 
 [node name="J-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
-position = Vector2(1076, 565)
+position = Vector2(1076, 631)
 key = "j-key"
 
 [node name="K-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
-position = Vector2(1316, 565)
+position = Vector2(1316, 631)
 key = "k-key"
 
 [node name="L-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
-position = Vector2(1556, 565)
+position = Vector2(1556, 631)
 key = "l-key"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -72,4 +72,3 @@ offset_bottom = 537.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_bd6a7")
-autoplay = true

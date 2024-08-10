@@ -12,7 +12,9 @@ func _input(event) -> void:
 		queue_free()
 
 func _on_area_2d_area_entered(area) -> void:
-	is_on_button = true
+	if area.is_in_group("miss"):
+		is_on_button = true
 
-func _on_area_2d_area_exited(area) -> void:
-	is_on_button = false
+func _on_area_2d_area_exited(area):
+	if area.is_in_group("miss"):
+		is_on_button = false

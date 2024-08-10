@@ -48,12 +48,18 @@ position = Vector2(-59, -40)
 position = Vector2(59, 40)
 shape = SubResource("RectangleShape2D_3fshm")
 
-[node name="Miss" type="Area2D" parent="."]
+[node name="Miss" type="Area2D" parent="." groups=["miss"]]
 position = Vector2(-59, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Miss"]
 position = Vector2(59, 40)
 shape = SubResource("RectangleShape2D_bybql")
+
+[node name="NoteSpawn" type="Marker2D" parent="."]
+position = Vector2(0, -221)
+
+[node name="NoteSpawn2" type="Marker2D" parent="."]
+position = Vector2(0.333333, -133.667)
 
 [connection signal="area_entered" from="Perfect" to="." method="_on_perfect_area_entered"]
 [connection signal="area_exited" from="Perfect" to="." method="_on_perfect_area_exited"]

@@ -2,6 +2,8 @@ extends Node2D
 
 @export var key: String = ""
 
+@onready var note_spawn = $NoteSpawn2
+
 var is_perfect_note: bool = false
 var is_good_note: bool = false
 var is_okay_note: bool = false
@@ -28,11 +30,19 @@ func _input(event) -> void:
 			print("miss")
 			Signals.emit_signal("on_combo_increment", false)
 			
+	if event.is_action_pressed("s-key"):
+		spawn_notes()
+
+func spawn_notes() -> void:
+	var note_instance := preload("res://Common/Interface/Beats/note.tscn").instantiate()
+	note_instance.global_position = note_spawn.global_position
+	add_child(note_instance)
+	
 func play_particles_after_note_hit(color: String) -> void:
-	var explosion_particle := preload("res://Common/Particles/Explosion/explosion.tscn").instantiate()
-	explosion_particle.global_position = global_position
-	explosion_particle.color = Color.html(color)
-	get_parent().add_child(explosion_particle)
+	var explosion_particle_instance := preload("res://Common/Particles/Explosion/explosion.tscn").instantiate()
+	explosion_particle_instance.global_position = global_position
+	explosion_particle_instance.color = Color.html(color)
+	get_parent().add_child(explosion_particle_instance)
 
 func _on_perfect_area_entered(area) -> void:
 	if area.is_in_group("note"):
