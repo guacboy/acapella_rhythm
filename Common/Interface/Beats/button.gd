@@ -9,18 +9,24 @@ func _input(event) -> void:
 	if event.is_action_pressed("j-key"):
 		if is_perfect_note:
 			print("perfect")
-			Signals.emit_signal("on_combo_increment")
-			play_particles_after_note_hit("perfect")
+			Signals.emit_signal("on_combo_increment", true)
+			play_particles_after_note_hit("#75ff7a") # light green
 		elif is_good_note:
 			print("good")
+			Signals.emit_signal("on_combo_increment", true)
+			play_particles_after_note_hit("#ffe599") # tan yellow
 		elif is_okay_note:
 			print("okay")
+			Signals.emit_signal("on_combo_increment", true)
+			play_particles_after_note_hit("#f6b26b") # orange-yellow
 		elif is_miss_note:
 			print("miss")
+			Signals.emit_signal("on_combo_increment", false)
 			
 func play_particles_after_note_hit(color: String) -> void:
 	var explosion_particle := preload("res://Common/Particles/Explosion/explosion.tscn").instantiate()
 	explosion_particle.global_position = global_position
+	explosion_particle.color = Color.html(color)
 	get_parent().add_child(explosion_particle)
 
 func _on_perfect_area_entered(area) -> void:

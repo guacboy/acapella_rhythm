@@ -1,3 +1,3 @@
 extends Node
 
-signal on_combo_increment()
+signal on_combo_increment(increment)
