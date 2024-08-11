@@ -2,15 +2,10 @@ extends Node2D
 
 @export var key: String = ""
 
-@onready var note_spawn = $NoteSpawn
-
 var is_perfect_note: bool = false
 var is_good_note: bool = false
 var is_okay_note: bool = false
 var is_miss_note: bool = false
-
-func _ready() -> void:
-	spawn_note()
 
 func _input(event) -> void:
 	if event.is_action_pressed(key):
@@ -32,11 +27,6 @@ func _input(event) -> void:
 		elif is_miss_note:
 			print("miss")
 			Signals.emit_signal("on_combo_increment", false)
-
-func spawn_note() -> void:
-	var note_instance := preload("res://Common/Interface/Beats/note.tscn").instantiate()
-	note_instance.global_position = note_spawn.position
-	add_child(note_instance)
 	
 func play_particles_after_note_hit(color: String) -> void:
 	var explosion_particle_instance := preload("res://Common/Particles/Explosion/explosion.tscn").instantiate()

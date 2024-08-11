@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d4uyra06p5ay"]
 
-[ext_resource type="PackedScene" uid="uid://ctw0ewxcb517l" path="res://Common/Interface/Beats/note.tscn" id="1_eelwy"]
+[ext_resource type="PackedScene" uid="uid://bbi3wft07wao6" path="res://Common/Interface/Beats/note_spawn.tscn" id="1_kip1w"]
 [ext_resource type="PackedScene" uid="uid://btu464qp8p4cy" path="res://Common/Interface/Beats/button.tscn" id="2_mdikm"]
 [ext_resource type="PackedScene" uid="uid://c2aafyr4fn65k" path="res://Common/Interface/GameplayUI/ui.tscn" id="3_8pipn"]
 [ext_resource type="PackedScene" uid="uid://c67wpj6y3wp0i" path="res://Common/Background/Stage/stage_background.tscn" id="3_dmtpu"]
@@ -8,31 +8,31 @@
 
 [node name="Stage" type="Node2D"]
 
-[node name="Notes" type="Node" parent="."]
+[node name="NoteSpawn" type="Node" parent="."]
 
-[node name="S-Note" parent="Notes" instance=ExtResource("1_eelwy")]
-position = Vector2(362, 281)
-key = "s-key"
+[node name="S-NoteSpawn" parent="NoteSpawn" instance=ExtResource("1_kip1w")]
+position = Vector2(362, -26)
+note_connected_to = "s-key"
 
-[node name="D-Note" parent="Notes" instance=ExtResource("1_eelwy")]
-position = Vector2(579, 406)
-key = "d-key"
+[node name="D-NoteSpawn" parent="NoteSpawn" instance=ExtResource("1_kip1w")]
+position = Vector2(579, -26)
+note_connected_to = "d-key"
 
-[node name="F-Note" parent="Notes" instance=ExtResource("1_eelwy")]
-position = Vector2(809, 337)
-key = "f-key"
+[node name="F-NoteSpawn" parent="NoteSpawn" instance=ExtResource("1_kip1w")]
+position = Vector2(810, -26)
+note_connected_to = "f-key"
 
-[node name="J-Note" parent="Notes" instance=ExtResource("1_eelwy")]
-position = Vector2(1076, 309)
-key = "j-key"
+[node name="J-NoteSpawn" parent="NoteSpawn" instance=ExtResource("1_kip1w")]
+position = Vector2(1076, -26)
+note_connected_to = "j-key"
 
-[node name="K-Note" parent="Notes" instance=ExtResource("1_eelwy")]
-position = Vector2(1315, 373)
-key = "k-key"
+[node name="K-NoteSpawn" parent="NoteSpawn" instance=ExtResource("1_kip1w")]
+position = Vector2(1316, -26)
+note_connected_to = "k-key"
 
-[node name="L-Note" parent="Notes" instance=ExtResource("1_eelwy")]
-position = Vector2(1556, 416)
-key = "l-key"
+[node name="L-NoteSpawn" parent="NoteSpawn" instance=ExtResource("1_kip1w")]
+position = Vector2(1556, -26)
+note_connected_to = "l-key"
 
 [node name="Buttons" type="Node" parent="."]
 
