@@ -3,7 +3,7 @@ extends Node2D
 @export var key: String = ""
 
 var is_on_button: bool = false
-var note_speed: int = 1
+var note_speed: int = 0
 
 func _ready() -> void:
 	Signals.connect("change_to_new_speed", _change_to_new_speed)
