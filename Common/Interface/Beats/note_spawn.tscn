@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbi3wft07wao6"]
-
-[ext_resource type="Script" path="res://note_spawn.gd" id="1_x7x4a"]
-
-[node name="NoteSpawn" type="Marker2D"]
-script = ExtResource("1_x7x4a")

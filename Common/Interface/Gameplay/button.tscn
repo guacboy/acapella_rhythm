@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://btu464qp8p4cy"]
 
-[ext_resource type="Script" path="res://Common/Interface/Beats/button.gd" id="1_aiocq"]
-[ext_resource type="Texture2D" uid="uid://c020vxl68ex5q" path="res://Common/Interface/Beats/beats.png" id="2_x7w1v"]
+[ext_resource type="Script" path="res://Common/Interface/Gameplay/button.gd" id="1_aiocq"]
+[ext_resource type="Texture2D" uid="uid://c020vxl68ex5q" path="res://Common/Interface/Gameplay/beats.png" id="2_x7w1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p75di"]
 size = Vector2(8.06557, 0.884422)
@@ -41,7 +41,7 @@ position = Vector2(-59, -40)
 position = Vector2(59, 40)
 shape = SubResource("RectangleShape2D_sqrd1")
 
-[node name="Okay" type="Area2D" parent="."]
+[node name="Okay" type="Area2D" parent="." groups=["okay"]]
 position = Vector2(-59, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Okay"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://cs6hnmlxjxude"]
+
+[ext_resource type="Script" path="res://Music/Copyright/siinamota - Young Girl A/siinamota-young_girl_a.gd" id="1_6mrkl"]
+[ext_resource type="AudioStream" uid="uid://dp1hnwkgr0ktf" path="res://Music/Copyright/siinamota - Young Girl A/siinamota - 椎名もた(siinamota) - Young Girl A _ 少女A.mp3" id="1_t6msg"]
+[ext_resource type="Script" path="res://Music/assign_note.gd" id="3_xtp4r"]
+[ext_resource type="Script" path="res://Music/note_block.gd" id="4_bvlnu"]
+
+[sub_resource type="Resource" id="Resource_yxkrx"]
+script = ExtResource("3_xtp4r")
+assign_note = "s-key"
+
+[sub_resource type="Resource" id="Resource_2gsx4"]
+script = ExtResource("3_xtp4r")
+assign_note = "d-key"
+
+[sub_resource type="Resource" id="Resource_yflms"]
+script = ExtResource("4_bvlnu")
+is_new_tempo = false
+new_tempo = 1
+is_next_iteration_delay = false
+next_iteration_delay = 1.0
+note_block = Array[ExtResource("3_xtp4r")]([SubResource("Resource_yxkrx"), SubResource("Resource_2gsx4")])
+
+[sub_resource type="Resource" id="Resource_kcgmf"]
+script = ExtResource("3_xtp4r")
+assign_note = "f-key"
+
+[sub_resource type="Resource" id="Resource_4q7j0"]
+script = ExtResource("4_bvlnu")
+is_new_tempo = false
+new_tempo = 1
+is_next_iteration_delay = false
+next_iteration_delay = 1.0
+note_block = Array[ExtResource("3_xtp4r")]([SubResource("Resource_kcgmf")])
+
+[node name="siinamota-YoungGirlA" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_t6msg")
+script = ExtResource("1_6mrkl")
+note_list = Array[ExtResource("4_bvlnu")]([SubResource("Resource_yflms"), SubResource("Resource_4q7j0")])
+
+[node name="NextIterationDelay" type="Timer" parent="."]
+one_shot = true
+
+[node name="Offset" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="NextIterationDelay" to="." method="_on_next_iteration_delay_timeout"]
+[connection signal="timeout" from="Offset" to="." method="_on_offset_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctw0ewxcb517l"]
 
-[ext_resource type="Texture2D" uid="uid://c020vxl68ex5q" path="res://Common/Interface/Beats/beats.png" id="1_kvdoj"]
-[ext_resource type="Script" path="res://Common/Interface/Beats/note.gd" id="1_t2uoj"]
+[ext_resource type="Texture2D" uid="uid://c020vxl68ex5q" path="res://Common/Interface/Gameplay/beats.png" id="1_kvdoj"]
+[ext_resource type="Script" path="res://Common/Interface/Gameplay/note.gd" id="1_t2uoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntx8q"]
 size = Vector2(62, 2)

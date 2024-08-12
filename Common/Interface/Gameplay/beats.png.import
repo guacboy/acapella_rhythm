@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c020vxl68ex5q"
-path="res://.godot/imported/beats.png-d172d78423bb1af3e6d8f6de1ccd02e3.ctex"
+path="res://.godot/imported/beats.png-55cc2e5f3dd269b23749be168146522f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Common/Interface/Beats/beats.png"
-dest_files=["res://.godot/imported/beats.png-d172d78423bb1af3e6d8f6de1ccd02e3.ctex"]
+source_file="res://Common/Interface/Gameplay/beats.png"
+dest_files=["res://.godot/imported/beats.png-55cc2e5f3dd269b23749be168146522f.ctex"]
 
 [params]
 

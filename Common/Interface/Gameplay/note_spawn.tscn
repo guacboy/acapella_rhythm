@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbi3wft07wao6"]
+
+[ext_resource type="Script" path="res://Common/Interface/Gameplay/note_spawn.gd" id="1_og7ns"]
+
+[node name="NoteSpawn" type="Marker2D"]
+script = ExtResource("1_og7ns")

@@ -13,24 +13,22 @@ extends Node
 var note_list := {
 	0: {
 		"is_new_tempo": true,
-		"tempo": 6,
+		"tempo": 5,
 		"is_next_iteration_delay": true,
 		"next_iteration_delay": 1.0,
+		"is_long_note": true,
 		"note": [
 			"s-key",
-			"d-key",
-			"f-key",
 		]
 	},
 	1: {
 		"is_new_tempo": true,
-		"tempo": 6,
+		"tempo": 3,
 		"is_next_iteration_delay": false,
 		"next_iteration_delay": 1.0,
+		"is_long_note": false,
 		"note": [
-			"j-key",
-			"k-key",
-			"l-key",
+			
 		]
 	},
 }
@@ -46,7 +44,7 @@ func _ready() -> void:
 
 func play_note(note) -> void:
 	for i in note:
-		Signals.emit_signal("spawn_note", i)
+		Signals.emit_signal("spawn_note", i, note_list_idx["is_long_note"])
 		Signals.emit_signal("change_to_new_speed", note_list_idx["tempo"])
 		if note_list_idx["is_new_tempo"]:
 			await get_tree().create_timer(0.5 / note_list_idx["tempo"]).timeout

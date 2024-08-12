@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2aafyr4fn65k"]
 
-[ext_resource type="Theme" uid="uid://c2vxnjjugyouy" path="res://default.tres" id="1_kj36l"]
+[ext_resource type="Theme" uid="uid://c2vxnjjugyouy" path="res://Resources/default.tres" id="1_5rl5m"]
 [ext_resource type="Script" path="res://Common/Interface/GameplayUI/ui.gd" id="2_pfpxn"]
 
 [node name="UI" type="Control"]
@@ -10,7 +10,7 @@ anchor_right = 0.452604
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_kj36l")
+theme = ExtResource("1_5rl5m")
 script = ExtResource("2_pfpxn")
 metadata/_edit_use_anchors_ = true
 

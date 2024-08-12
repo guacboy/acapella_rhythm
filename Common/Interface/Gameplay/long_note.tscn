@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyhehlrja8em1"]
+
+[ext_resource type="Script" path="res://Common/Interface/Gameplay/long_note.gd" id="1_drxc2"]
+[ext_resource type="Texture2D" uid="uid://c020vxl68ex5q" path="res://Common/Interface/Gameplay/beats.png" id="2_8pwcr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntx8q"]
+size = Vector2(62, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jopip"]
+size = Vector2(3, 42.6667)
+
+[node name="LongNote" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_drxc2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 15.5)
+scale = Vector2(7.625, 6.21875)
+texture = ExtResource("2_8pwcr")
+hframes = 3
+vframes = 4
+frame = 3
+
+[node name="BodyArea" type="Area2D" parent="." groups=["note"]]
+position = Vector2(-59, -21.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
+position = Vector2(59, 21.5)
+shape = SubResource("RectangleShape2D_ntx8q")
+
+[node name="Line" type="Sprite2D" parent="."]
+position = Vector2(0.333335, -10.1667)
+rotation = 1.5708
+scale = Vector2(5.5625, 1)
+texture = ExtResource("2_8pwcr")
+hframes = 2
+vframes = 4
+
+[node name="LineArea" type="Area2D" parent="."]
+position = Vector2(0.333335, 11.1667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineArea"]
+position = Vector2(-0.500001, -31.5)
+shape = SubResource("RectangleShape2D_jopip")
+
+[connection signal="area_entered" from="BodyArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="BodyArea" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="LineArea" to="." method="_on_line_area_area_entered"]
+[connection signal="area_exited" from="LineArea" to="." method="_on_line_area_area_exited"]
