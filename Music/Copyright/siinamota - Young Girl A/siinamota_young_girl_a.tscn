@@ -10,4 +10,8 @@ script = ExtResource("1_6mrkl")
 [node name="NextIterationDelay" type="Timer" parent="."]
 one_shot = true
 
+[node name="Offset" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="NextIterationDelay" to="." method="_on_next_iteration_delay_timeout"]
+[connection signal="timeout" from="Offset" to="." method="_on_offset_timeout"]
