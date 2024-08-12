@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs6hnmlxjxude"]
+
+[ext_resource type="Script" path="res://Music/Copyright/siinamota - Young Girl A/siinamota-young_girl_a.gd" id="1_6mrkl"]
+[ext_resource type="AudioStream" uid="uid://dp1hnwkgr0ktf" path="res://Music/Copyright/siinamota - Young Girl A/siinamota - 椎名もた(siinamota) - Young Girl A _ 少女A.mp3" id="1_t6msg"]
+
+[node name="siinamota-YoungGirlA" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_t6msg")
+script = ExtResource("1_6mrkl")
+
+[node name="Timer" type="Timer" parent="."]

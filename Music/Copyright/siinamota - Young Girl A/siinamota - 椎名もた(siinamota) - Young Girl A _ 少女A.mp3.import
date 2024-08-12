@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp1hnwkgr0ktf"
+path="res://.godot/imported/siinamota - 椎名もた(siinamota) - Young Girl A _ 少女A.mp3-900482a875ce9c818397ee98509bafaa.mp3str"
+
+[deps]
+
+source_file="res://Music/Copyright/siinamota - Young Girl A/siinamota - 椎名もた(siinamota) - Young Girl A _ 少女A.mp3"
+dest_files=["res://.godot/imported/siinamota - 椎名もた(siinamota) - Young Girl A _ 少女A.mp3-900482a875ce9c818397ee98509bafaa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

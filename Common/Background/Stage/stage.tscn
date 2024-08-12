@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://btu464qp8p4cy" path="res://Common/Interface/Beats/button.tscn" id="2_mdikm"]
 [ext_resource type="PackedScene" uid="uid://c2aafyr4fn65k" path="res://Common/Interface/GameplayUI/ui.tscn" id="3_8pipn"]
 [ext_resource type="PackedScene" uid="uid://c67wpj6y3wp0i" path="res://Common/Background/Stage/stage_background.tscn" id="3_dmtpu"]
-[ext_resource type="AudioStream" uid="uid://dp1hnwkgr0ktf" path="res://Music/Copyright/siinamota - 椎名もた(siinamota) - Young Girl A _ 少女A.mp3" id="5_bd6a7"]
+[ext_resource type="PackedScene" uid="uid://cs6hnmlxjxude" path="res://Music/Copyright/siinamota - Young Girl A/siinamota_young_girl_a.tscn" id="5_ste2r"]
 
 [node name="Stage" type="Node2D"]
 
@@ -70,5 +70,4 @@ offset_top = 537.0
 offset_right = 947.0
 offset_bottom = 537.0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_bd6a7")
+[node name="siinamota-YoungGirlA" parent="." instance=ExtResource("5_ste2r")]
