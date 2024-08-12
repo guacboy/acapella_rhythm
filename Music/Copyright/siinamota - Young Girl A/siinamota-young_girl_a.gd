@@ -3,12 +3,17 @@ extends Node
 @onready var trackID = $"."
 @onready var next_iteration_delay = $NextIterationDelay
 
-# the higher the tempo, the lower the delay must be to be consistent;
-# delay = 0.5 / tempo
+# is_new_tempo: toggle for delay between each note -
+# false = all notes, same row; true = notes play at different row
+# tempo: controls the speed of each note
+# is_next_iteration_delay: toggle for delay for next iteration block
+# next_iteration_delay: controls the delay between playing the next iteration block
+# note: where the magic happens
 var note_list := {
 	0: {
 		"is_new_tempo": true,
 		"tempo": 4,
+		"is_next_iteration_delay": true,
 		"next_iteration_delay": 1.0,
 		"note": [
 			"s-key",
@@ -17,8 +22,9 @@ var note_list := {
 		]
 	},
 	1: {
-		"is_new_tempo": false,
-		"tempo": 2,
+		"is_new_tempo": true,
+		"tempo": 4,
+		"is_next_iteration_delay": false,
 		"next_iteration_delay": 1.0,
 		"note": [
 			"j-key",
@@ -46,9 +52,18 @@ func play_note(note) -> void:
 	
 	# continues looping until the end of the note_list
 	if current_idx < len(note_list) - 1:
-		next_iteration_delay.wait_time = note_list_idx["next_iteration_delay"] # delays next note block
 		current_idx += 1
-		next_iteration_delay.start()
+		
+		# if there is no iteration delay, play next note block
+		if not note_list_idx["is_next_iteration_delay"]:
+			note_list_idx = note_list[current_idx]
+			play_note(note_list_idx["note"])
+		
+		# if there is an iteration delay, start timer to play next note block
+		if note_list_idx["is_next_iteration_delay"]:
+			var previous_note_list_idx = note_list[current_idx - 1]
+			next_iteration_delay.wait_time = previous_note_list_idx["next_iteration_delay"]
+			next_iteration_delay.start()
 
 func _on_next_iteration_delay_timeout():
 	note_list_idx = note_list[current_idx]
