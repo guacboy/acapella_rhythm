@@ -7,7 +7,7 @@
 size = Vector2(62, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jopip"]
-size = Vector2(3, 42.6667)
+size = Vector2(3, 44.6667)
 
 [node name="LongNote" type="Node2D"]
 scale = Vector2(3, 3)
@@ -40,7 +40,7 @@ vframes = 4
 position = Vector2(0.333335, 11.1667)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LineArea"]
-position = Vector2(-0.500001, -31.5)
+position = Vector2(-0.500001, -32.5)
 shape = SubResource("RectangleShape2D_jopip")
 
 [connection signal="area_entered" from="BodyArea" to="." method="_on_area_2d_area_entered"]

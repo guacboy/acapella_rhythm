@@ -13,7 +13,7 @@ size = Vector2(62, 13)
 size = Vector2(62, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bybql"]
-size = Vector2(62, 34)
+size = Vector2(62, 43.3333)
 
 [node name="Button" type="Node2D"]
 scale = Vector2(3, 3)
