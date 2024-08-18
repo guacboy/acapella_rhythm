@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjk7s5rgvmwke"]
+
+[ext_resource type="Theme" uid="uid://c2vxnjjugyouy" path="res://Resources/default.tres" id="1_ayv2a"]
+
+[node name="TextStatus" type="RichTextLabel"]
+offset_right = 306.0
+offset_bottom = 84.0
+theme = ExtResource("1_ayv2a")
+theme_override_font_sizes/normal_font_size = 36
+text = "perfect"
+fit_content = true
+scroll_active = false
