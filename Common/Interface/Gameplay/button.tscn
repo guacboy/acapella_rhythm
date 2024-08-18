@@ -13,7 +13,7 @@ size = Vector2(62, 13)
 size = Vector2(62, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bybql"]
-size = Vector2(62, 43.3333)
+size = Vector2(62, 16.6667)
 
 [node name="Button" type="Node2D"]
 scale = Vector2(3, 3)
@@ -52,7 +52,7 @@ shape = SubResource("RectangleShape2D_3fshm")
 position = Vector2(-59, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Miss"]
-position = Vector2(59, 40)
+position = Vector2(59, 22.6667)
 shape = SubResource("RectangleShape2D_bybql")
 
 [connection signal="area_entered" from="Perfect" to="." method="_on_perfect_area_entered"]

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var key: String = ""
 
-@onready var sprite_2d = $Sprite2D
+@onready var body = $Body
 @onready var body_area = $BodyArea
 @onready var line = $Line
 @onready var line_area = $LineArea
@@ -26,7 +26,7 @@ func _physics_process(delta) -> void:
 		shorten_line()
 	if is_out_of_bounds and not is_key_held_down and line.scale.x >= 0.0:
 		shorten_line()
-		fade_out(sprite_2d)
+		fade_out(body)
 		fade_out(line)
 
 func _input(event) -> void:
@@ -34,14 +34,14 @@ func _input(event) -> void:
 	if event.is_action_pressed(key) and is_on_button and not is_exactly_on_button:
 		body_area.queue_free()
 		line_area.queue_free()
-		fade_out(sprite_2d)
+		fade_out(body)
 		fade_out(line)
 	
 	# gets rid of the note head
 	if event.is_action_pressed(key) and is_exactly_on_button:
 		is_key_held_down = true
 		fade_out(line)
-		sprite_2d.queue_free()
+		body.queue_free()
 		body_area.queue_free()
 		
 	# breaks combo and disables the line
@@ -50,6 +50,10 @@ func _input(event) -> void:
 		Signals.emit_signal("on_combo_increment", false)
 		key = ""
 
+# changes how fast the notes will come down, allowing for adjustable tempos
+func _change_to_new_speed(speed: int) -> void:
+	note_speed = speed
+	
 # shortens the line sprite
 func shorten_line() -> void:
 	line.scale.x -= 0.2
@@ -63,13 +67,11 @@ func fade_out(object: Sprite2D) -> void:
 	tween.tween_property(object, "modulate:a", 0.0, 0.3)
 	tween.finished.connect(queue_free)
 
-# changes how fast the notes will come down, allowing for adjustable tempos
-func _change_to_new_speed(speed: int) -> void:
-	note_speed = speed
-
 func _on_body_area_area_entered(area):
 	if area.is_in_group("miss"):
 		is_on_button = true
+	if area.is_in_group("despawn"):
+		is_out_of_bounds = true
 
 func _on_body_area_area_exited(area):
 	if area.is_in_group("miss"):
@@ -78,8 +80,6 @@ func _on_body_area_area_exited(area):
 func _on_line_area_area_entered(area):
 	if area.is_in_group("okay"):
 		is_exactly_on_button = true
-	if area.is_in_group("despawn"):
-		is_out_of_bounds = true
 
 func _on_line_area_area_exited(area):
 	if area.is_in_group("okay"):

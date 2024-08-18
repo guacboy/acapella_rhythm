@@ -74,4 +74,4 @@ offset_bottom = 537.0
 [node name="siinamota-YoungGirlA" parent="." instance=ExtResource("5_ste2r")]
 
 [node name="DespawnZone" parent="." instance=ExtResource("6_r6efd")]
-position = Vector2(939, 732)
+position = Vector2(939, 677)
