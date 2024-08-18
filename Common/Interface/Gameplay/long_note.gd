@@ -67,11 +67,11 @@ func fade_out(object: Sprite2D) -> void:
 func _change_to_new_speed(speed: int) -> void:
 	note_speed = speed
 
-func _on_area_2d_area_entered(area) -> void:
+func _on_body_area_area_entered(area):
 	if area.is_in_group("miss"):
 		is_on_button = true
 
-func _on_area_2d_area_exited(area):
+func _on_body_area_area_exited(area):
 	if area.is_in_group("miss"):
 		is_on_button = false
 
@@ -84,3 +84,6 @@ func _on_line_area_area_entered(area):
 func _on_line_area_area_exited(area):
 	if area.is_in_group("okay"):
 		is_exactly_on_button = false
+
+
+

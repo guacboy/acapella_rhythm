@@ -16,7 +16,7 @@ var note_list := {
 		"tempo": 5,
 		"is_next_iteration_delay": true,
 		"next_iteration_delay": 1.0,
-		"is_long_note": true,
+		"is_long_note": false,
 		"note": [
 			"s-key",
 		]

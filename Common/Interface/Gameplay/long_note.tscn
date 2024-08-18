@@ -43,7 +43,7 @@ position = Vector2(0.333335, 11.1667)
 position = Vector2(-0.500001, -32.5)
 shape = SubResource("RectangleShape2D_jopip")
 
-[connection signal="area_entered" from="BodyArea" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="BodyArea" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="BodyArea" to="." method="_on_body_area_area_entered"]
+[connection signal="area_exited" from="BodyArea" to="." method="_on_body_area_area_exited"]
 [connection signal="area_entered" from="LineArea" to="." method="_on_line_area_area_entered"]
 [connection signal="area_exited" from="LineArea" to="." method="_on_line_area_area_exited"]
