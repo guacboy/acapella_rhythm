@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://h7e7xctkwbv4"]
+
+[ext_resource type="Texture2D" uid="uid://bma7o3dh56x3l" path="res://Common/Background/Stage/stage_crowd.png" id="1_3gqom"]
+
+[node name="StageCrowd" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StageCrowd" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 312.0
+offset_bottom = 294.0
+texture = ExtResource("1_3gqom")
+metadata/_edit_use_anchors_ = true

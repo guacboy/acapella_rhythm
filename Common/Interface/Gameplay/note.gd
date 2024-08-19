@@ -3,6 +3,7 @@ extends Node2D
 @export var key: String = ""
 
 @onready var body = $Body
+@onready var miss_sound = $MissSound
 
 var is_in_miss_area: bool = false
 var is_exactly_on_button: bool = false
@@ -42,6 +43,7 @@ func _on_body_area_area_entered(area):
 		Signals.emit_signal("on_combo_increment", false)
 		Signals.emit_signal("on_life_change", -1.0)
 		fade_out(body)
+		miss_sound.play()
 
 func _on_body_area_area_exited(area):
 	if area.is_in_group("miss"):

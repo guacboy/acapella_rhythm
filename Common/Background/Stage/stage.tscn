@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4uyra06p5ay"]
+[gd_scene load_steps=9 format=3 uid="uid://d4uyra06p5ay"]
 
 [ext_resource type="PackedScene" uid="uid://bbi3wft07wao6" path="res://Common/Interface/Gameplay/note_spawn.tscn" id="1_kip1w"]
 [ext_resource type="Script" path="res://Common/Background/Stage/stage.gd" id="1_ugdiu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c67wpj6y3wp0i" path="res://Common/Background/Stage/stage_background.tscn" id="3_dmtpu"]
 [ext_resource type="PackedScene" uid="uid://cs6hnmlxjxude" path="res://Music/Copyright/siinamota - Young Girl A/siinamota_young_girl_a.tscn" id="5_ste2r"]
 [ext_resource type="PackedScene" uid="uid://b5wp4ei4b521d" path="res://Common/Interface/Gameplay/despawn_zone.tscn" id="6_r6efd"]
+[ext_resource type="PackedScene" uid="uid://h7e7xctkwbv4" path="res://Common/Background/Stage/stage_crowd.tscn" id="8_5u71h"]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_ugdiu")
@@ -72,6 +73,68 @@ offset_left = 947.0
 offset_top = 537.0
 offset_right = 947.0
 offset_bottom = 537.0
+
+[node name="Crowd" type="Node" parent="."]
+
+[node name="StageCrowdLt1" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 764.0
+offset_top = 791.0
+offset_right = 804.0
+offset_bottom = 831.0
+
+[node name="StageCrowdRt1" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 1033.0
+offset_top = 787.0
+offset_right = 1073.0
+offset_bottom = 827.0
+
+[node name="StageCrowdLt2" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 552.0
+offset_top = 785.0
+offset_right = 592.0
+offset_bottom = 825.0
+
+[node name="StageCrowdRt2" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 1216.0
+offset_top = 785.0
+offset_right = 1256.0
+offset_bottom = 825.0
+
+[node name="StageCrowdLt3" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 358.0
+offset_top = 781.0
+offset_right = 398.0
+offset_bottom = 821.0
+
+[node name="StageCrowdRt3" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 1387.0
+offset_top = 783.0
+offset_right = 1427.0
+offset_bottom = 823.0
+
+[node name="StageCrowdLt4" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 171.0
+offset_top = 789.0
+offset_right = 211.0
+offset_bottom = 829.0
+
+[node name="StageCrowdRt4" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 1523.0
+offset_top = 781.0
+offset_right = 1563.0
+offset_bottom = 821.0
+
+[node name="StageCrowdLt5" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 6.0
+offset_top = 774.0
+offset_right = 46.0
+offset_bottom = 814.0
+
+[node name="StageCrowdRt5" parent="Crowd" instance=ExtResource("8_5u71h")]
+offset_left = 1595.0
+offset_top = 789.0
+offset_right = 1635.0
+offset_bottom = 829.0
 
 [node name="siinamota-YoungGirlA" parent="." instance=ExtResource("5_ste2r")]
 

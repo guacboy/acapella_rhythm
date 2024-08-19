@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Common/Interface/Gameplay/button.gd" id="1_aiocq"]
 [ext_resource type="Texture2D" uid="uid://c020vxl68ex5q" path="res://Common/Interface/Gameplay/beats.png" id="2_x7w1v"]
-[ext_resource type="AudioStream" uid="uid://b7bdugy4af7s7" path="res://Common/Interface/Gameplay/osu-hit-sound.mp3" id="3_05xrp"]
-[ext_resource type="AudioStream" uid="uid://bukl0vb5x0sbt" path="res://Common/Interface/Gameplay/combobreak.wav" id="4_metg3"]
+[ext_resource type="AudioStream" uid="uid://b7bdugy4af7s7" path="res://Common/Interface/Gameplay/hit_sound.mp3" id="3_itbyu"]
+[ext_resource type="AudioStream" uid="uid://bukl0vb5x0sbt" path="res://Common/Interface/Gameplay/miss_sound.wav" id="4_mow6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p75di"]
 size = Vector2(8.06557, 1.42044)
@@ -58,11 +58,12 @@ position = Vector2(59, 22.6667)
 shape = SubResource("RectangleShape2D_bybql")
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_05xrp")
+stream = ExtResource("3_itbyu")
 volume_db = 10.0
 
 [node name="MissSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_metg3")
+stream = ExtResource("4_mow6u")
+volume_db = -5.0
 
 [connection signal="area_entered" from="Perfect" to="." method="_on_perfect_area_entered"]
 [connection signal="area_exited" from="Perfect" to="." method="_on_perfect_area_exited"]

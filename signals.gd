@@ -1,7 +1,7 @@
 extends Node
 
 # UI elements
-signal on_combo_increment(increment: int)
+signal on_combo_increment(increment: bool)
 signal on_score_increment(score: int)
 
 # track elements
