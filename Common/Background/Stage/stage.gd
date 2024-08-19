@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var despawn_zone = $DespawnZone
 
-var max_lives: float = 10.0
+var max_lives: float = 1000.0
 
 func _ready() -> void:
 	Signals.connect("on_life_change", _on_life_change)

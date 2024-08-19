@@ -2,6 +2,9 @@ extends Node2D
 
 @export var key: String = ""
 
+@onready var hit_sound = $HitSound
+@onready var miss_sound = $MissSound
+
 var is_perfect_note: bool = false
 var is_good_note: bool = false
 var is_okay_note: bool = false
@@ -16,6 +19,7 @@ func _input(event) -> void:
 			Signals.emit_signal("on_life_change", 2.0)
 			play_particles_after_note_hit("#2986cc") # sea blue
 			play_text_status_after_note_hit("perfect")
+			hit_sound.play()
 		elif is_good_note:
 			print("good")
 			Signals.emit_signal("on_combo_increment", true)
@@ -23,6 +27,7 @@ func _input(event) -> void:
 			Signals.emit_signal("on_life_change", 1.0)
 			play_particles_after_note_hit("#82dd59") # green
 			play_text_status_after_note_hit("good")
+			hit_sound.play()
 		elif is_okay_note:
 			print("okay")
 			Signals.emit_signal("on_combo_increment", true)
@@ -30,11 +35,13 @@ func _input(event) -> void:
 			Signals.emit_signal("on_life_change", 0.5)
 			play_particles_after_note_hit("#f2c845") # orange-yellow
 			play_text_status_after_note_hit("okay")
+			hit_sound.play()
 		elif is_miss_note:
 			print("miss")
 			Signals.emit_signal("on_combo_increment", false)
 			Signals.emit_signal("on_life_change", -1.0)
 			play_text_status_after_note_hit("miss")
+			miss_sound.play()
 
 func play_particles_after_note_hit(color: String) -> void:
 	var explosion_particle_instance := preload("res://Common/Particles/Explosion/explosion.tscn").instantiate()
