@@ -4,31 +4,60 @@ extends Node
 @onready var next_iteration_delay = $NextIterationDelay
 @onready var offset = $Offset
 
-# is_new_tempo: toggle for delay between each note -
-# false = all notes, same row; true = notes play at different row
+# is_same_row: toggle for delay between each note - 
+# true = all notes, same row; false = notes play at different row
 # tempo: controls the speed of each note
 # is_next_iteration_delay: toggle for delay for next iteration block
 # next_iteration_delay: controls the delay between playing the next iteration block
+# is_long_note: toggle for long note (does not currently work)
 # note: where the magic happens
 var note_list := {
 	0: {
-		"is_new_tempo": true,
-		"tempo": 5,
+		"is_same_row": false,
+		"tempo": 15,
+		"is_next_iteration_delay": true,
+		"next_iteration_delay": 0.4,
+		"is_long_note": false,
+		"note": [
+			"s-key", "",
+			"d-key", "",
+			"f-key",
+		]
+	},
+	1: {
+		"is_same_row": false,
+		"tempo": 15,
 		"is_next_iteration_delay": true,
 		"next_iteration_delay": 1.0,
 		"is_long_note": false,
 		"note": [
-			"s-key",
+			"l-key", "",
+			"k-key", "",
+			"j-key",
 		]
 	},
-	1: {
-		"is_new_tempo": true,
-		"tempo": 3,
+	2: {
+		"is_same_row": false,
+		"tempo": 15,
+		"is_next_iteration_delay": true,
+		"next_iteration_delay": 0.4,
+		"is_long_note": false,
+		"note": [
+			"s-key", "",
+			"d-key", "",
+			"f-key",
+		]
+	},
+	3: {
+		"is_same_row": false,
+		"tempo": 15,
 		"is_next_iteration_delay": false,
 		"next_iteration_delay": 1.0,
 		"is_long_note": false,
 		"note": [
-			
+			"l-key", "",
+			"k-key", "",
+			"j-key",
 		]
 	},
 }
@@ -39,14 +68,14 @@ var starting_position_of_song: float = 0.0 # current position of song
 
 func _ready() -> void:
 	play_note(note_list_idx["note"])
-	offset.wait_time = 1.75 # delay for starting the song (to align notes vs button)
+	offset.wait_time = 0.6 # delay for starting the song (to align notes vs button)
 	offset.start()
 
 func play_note(note) -> void:
-	for i in note:
-		Signals.emit_signal("spawn_note", i, note_list_idx["is_long_note"])
-		Signals.emit_signal("change_to_new_speed", note_list_idx["tempo"])
-		if note_list_idx["is_new_tempo"]:
+	for n in note:
+		Signals.emit_signal("spawn_note", n, note_list_idx["is_long_note"])
+		Signals.emit_signal("set_speed", note_list_idx["tempo"])
+		if not note_list_idx["is_same_row"]:
 			await get_tree().create_timer(0.5 / note_list_idx["tempo"]).timeout
 	
 	# continues looping until the end of the note_list

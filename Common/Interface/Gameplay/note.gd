@@ -6,17 +6,13 @@ extends Node2D
 
 var is_in_miss_area: bool = false
 var is_exactly_on_button: bool = false
-var is_out_of_bounds: bool = false
 var note_speed: int = 0
 
 func _ready() -> void:
-	Signals.connect("change_to_new_speed", _change_to_new_speed)
+	Signals.connect("set_speed", _set_speed)
 
 func _physics_process(delta) -> void:
 	position.y += note_speed
-	
-	if is_out_of_bounds:
-		fade_out(body)
 
 func _input(event) -> void:
 	# if note is exactly over the button, delete the note
@@ -28,7 +24,7 @@ func _input(event) -> void:
 		body.modulate.a = 0.25
 
 # changes how fast the notes will come down, allowing for adjustable tempos
-func _change_to_new_speed(speed: int) -> void:
+func _set_speed(speed: int) -> void:
 	note_speed = speed
 	
 # fades out the note if out of bounds
@@ -43,7 +39,9 @@ func _on_body_area_area_entered(area):
 	if area.is_in_group("okay"):
 		is_exactly_on_button = true
 	if area.is_in_group("despawn"):
-		is_out_of_bounds = true
+		Signals.emit_signal("on_combo_increment", false)
+		Signals.emit_signal("on_life_change", -1.0)
+		fade_out(body)
 
 func _on_body_area_area_exited(area):
 	if area.is_in_group("miss"):

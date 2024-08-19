@@ -13,23 +13,27 @@ func _input(event) -> void:
 			print("perfect")
 			Signals.emit_signal("on_combo_increment", true)
 			Signals.emit_signal("on_score_increment", 300)
+			Signals.emit_signal("on_life_change", 2.0)
 			play_particles_after_note_hit("#2986cc") # sea blue
 			play_text_status_after_note_hit("perfect")
 		elif is_good_note:
 			print("good")
 			Signals.emit_signal("on_combo_increment", true)
 			Signals.emit_signal("on_score_increment", 100)
+			Signals.emit_signal("on_life_change", 1.0)
 			play_particles_after_note_hit("#82dd59") # green
 			play_text_status_after_note_hit("good")
 		elif is_okay_note:
 			print("okay")
 			Signals.emit_signal("on_combo_increment", true)
 			Signals.emit_signal("on_score_increment", 50)
+			Signals.emit_signal("on_life_change", 0.5)
 			play_particles_after_note_hit("#f2c845") # orange-yellow
 			play_text_status_after_note_hit("okay")
 		elif is_miss_note:
 			print("miss")
 			Signals.emit_signal("on_combo_increment", false)
+			Signals.emit_signal("on_life_change", -1.0)
 			play_text_status_after_note_hit("miss")
 
 func play_particles_after_note_hit(color: String) -> void:
@@ -47,7 +51,7 @@ func play_text_status_after_note_hit(text: String) -> void:
 	var tween := create_tween().set_parallel()
 	tween.tween_property(text_status_instance, "position:y", global_position.y - 25, 1.0)
 	tween.tween_property(text_status_instance, "modulate:a", 0.0, 0.3)
-	tween.finished.connect(queue_free)
+	tween.finished.connect(text_status_instance.queue_free)
 
 func _on_perfect_area_entered(area) -> void:
 	if area.is_in_group("note"):

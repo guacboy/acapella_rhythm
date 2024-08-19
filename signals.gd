@@ -6,4 +6,7 @@ signal on_score_increment(score: int)
 
 # track elements
 signal spawn_note(note_key: String, is_long_note: bool)
-signal change_to_new_speed(speed: int)
+signal set_speed(speed: int)
+
+# life element
+signal on_life_change(life: float)

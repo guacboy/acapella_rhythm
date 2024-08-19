@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4uyra06p5ay"]
+[gd_scene load_steps=7 format=3 uid="uid://d4uyra06p5ay"]
 
 [ext_resource type="PackedScene" uid="uid://bbi3wft07wao6" path="res://Common/Interface/Gameplay/note_spawn.tscn" id="1_kip1w"]
-[ext_resource type="Script" path="res://Common/Background/Stage/stage.gd" id="1_ugdiu"]
 [ext_resource type="PackedScene" uid="uid://btu464qp8p4cy" path="res://Common/Interface/Gameplay/button.tscn" id="2_mdikm"]
 [ext_resource type="PackedScene" uid="uid://c2aafyr4fn65k" path="res://Common/Interface/GameplayUI/ui.tscn" id="3_8pipn"]
 [ext_resource type="PackedScene" uid="uid://c67wpj6y3wp0i" path="res://Common/Background/Stage/stage_background.tscn" id="3_dmtpu"]
@@ -9,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b5wp4ei4b521d" path="res://Common/Interface/Gameplay/despawn_zone.tscn" id="6_r6efd"]
 
 [node name="Stage" type="Node2D"]
-script = ExtResource("1_ugdiu")
 
 [node name="NoteSpawn" type="Node" parent="."]
 
