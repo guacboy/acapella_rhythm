@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsu58wqr6fdyj"]
+
+[ext_resource type="Script" path="res://Common/Interface/Gameplay/spotlight.gd" id="1_qdips"]
+
+[node name="Spotlight" type="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.123583
+anchor_bottom = 0.782407
+offset_right = -0.280029
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_qdips")
+metadata/_edit_use_anchors_ = true

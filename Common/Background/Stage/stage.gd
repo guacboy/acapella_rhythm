@@ -12,7 +12,7 @@ extends Node2D
 @onready var stage_crowd_rt_5 = $Crowd/StageCrowdRt5
 @onready var despawn_zone = $DespawnZone
 
-var max_lives: float = 10.0
+var max_lives: float = 1000.0
 var initial_positions = {}
 
 func _ready() -> void:
@@ -77,4 +77,4 @@ func _process(delta) -> void:
 		tween.tween_property(stage_crowd_rt_2, "position:x", initial_positions["rt2"].x, 0.5)
 
 func _on_life_change(life: float) -> void:
-	max_lives = clamp(max_lives + life, 0.0, 10.0)
+	max_lives = clamp(max_lives + life, 0.0, 1000.0)

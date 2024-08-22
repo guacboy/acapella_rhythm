@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4uyra06p5ay"]
+[gd_scene load_steps=10 format=3 uid="uid://d4uyra06p5ay"]
 
 [ext_resource type="PackedScene" uid="uid://bbi3wft07wao6" path="res://Common/Interface/Gameplay/note_spawn.tscn" id="1_kip1w"]
 [ext_resource type="Script" path="res://Common/Background/Stage/stage.gd" id="1_ugdiu"]
 [ext_resource type="PackedScene" uid="uid://btu464qp8p4cy" path="res://Common/Interface/Gameplay/button.tscn" id="2_mdikm"]
 [ext_resource type="PackedScene" uid="uid://c2aafyr4fn65k" path="res://Common/Interface/GameplayUI/ui.tscn" id="3_8pipn"]
 [ext_resource type="PackedScene" uid="uid://c67wpj6y3wp0i" path="res://Common/Background/Stage/stage_background.tscn" id="3_dmtpu"]
+[ext_resource type="PackedScene" uid="uid://dsu58wqr6fdyj" path="res://Common/Interface/Gameplay/spotlight.tscn" id="4_fnurv"]
 [ext_resource type="PackedScene" uid="uid://cs6hnmlxjxude" path="res://Music/Copyright/siinamota - Young Girl A/siinamota_young_girl_a.tscn" id="5_ste2r"]
 [ext_resource type="PackedScene" uid="uid://b5wp4ei4b521d" path="res://Common/Interface/Gameplay/despawn_zone.tscn" id="6_r6efd"]
 [ext_resource type="PackedScene" uid="uid://h7e7xctkwbv4" path="res://Common/Background/Stage/stage_crowd.tscn" id="8_5u71h"]
@@ -63,6 +64,73 @@ key = "k-key"
 [node name="L-Button" parent="Buttons" instance=ExtResource("2_mdikm")]
 position = Vector2(1556, 631)
 key = "l-key"
+
+[node name="Spotlights" type="CanvasLayer" parent="."]
+
+[node name="S-Spotlight" parent="Spotlights" instance=ExtResource("4_fnurv")]
+anchor_left = 0.14
+anchor_top = 0.100556
+anchor_right = 0.237167
+anchor_bottom = 0.613333
+offset_left = 0.200012
+offset_top = 0.400002
+offset_right = -0.360016
+offset_bottom = -0.400024
+spotlight_key = "s-key"
+
+[node name="D-Spotlight" parent="Spotlights" instance=ExtResource("4_fnurv")]
+anchor_left = 0.253688
+anchor_top = 0.100815
+anchor_right = 0.349937
+anchor_bottom = 0.613444
+offset_left = -0.0800171
+offset_top = 0.12001
+offset_right = -0.880005
+offset_bottom = -0.52002
+spotlight_key = "d-key"
+
+[node name="F-Spotlight" parent="Spotlights" instance=ExtResource("4_fnurv")]
+anchor_left = 0.372438
+anchor_top = 0.100482
+anchor_right = 0.470979
+anchor_bottom = 0.602222
+offset_left = 0.919983
+offset_top = 0.47998
+offset_bottom = 11.6
+spotlight_key = "f-key"
+
+[node name="J-Spotlight" parent="Spotlights" instance=ExtResource("4_fnurv")]
+anchor_left = 0.511438
+anchor_top = 0.101074
+anchor_right = 0.608917
+anchor_bottom = 0.608704
+offset_left = 0.039978
+offset_top = -0.159988
+offset_right = 0.879883
+offset_bottom = 4.59998
+spotlight_key = "j-key"
+
+[node name="K-Spotlight" parent="Spotlights" instance=ExtResource("4_fnurv")]
+anchor_left = 0.636646
+anchor_top = 0.101
+anchor_right = 0.734604
+anchor_bottom = 0.60863
+offset_left = 0.640015
+offset_top = -0.0799999
+offset_right = -0.440063
+offset_bottom = 4.67999
+spotlight_key = "k-key"
+
+[node name="L-Spotlight" parent="Spotlights" instance=ExtResource("4_fnurv")]
+anchor_left = 0.762
+anchor_top = 0.10137
+anchor_right = 0.859479
+anchor_bottom = 0.613
+offset_left = -0.0400391
+offset_top = -0.47998
+offset_right = 0.799927
+offset_bottom = -0.0400391
+spotlight_key = "l-key"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -136,7 +204,7 @@ offset_top = 789.0
 offset_right = 1635.0
 offset_bottom = 829.0
 
-[node name="siinamota-YoungGirlA" parent="." instance=ExtResource("5_ste2r")]
-
 [node name="DespawnZone" parent="." instance=ExtResource("6_r6efd")]
 position = Vector2(939, 677)
+
+[node name="siinamota-YoungGirlA" parent="." instance=ExtResource("5_ste2r")]

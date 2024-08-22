@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var hit_sound = $HitSound
 @onready var miss_sound = $MissSound
+@onready var spotlights = $"../../Spotlights"
 
 var is_perfect_note: bool = false
 var is_good_note: bool = false
@@ -12,6 +13,7 @@ var is_miss_note: bool = false
 
 func _input(event) -> void:
 	if event.is_action_pressed(key):
+		play_spotlight_over_button(key)
 		if is_perfect_note:
 			print("perfect")
 			Signals.emit_signal("on_combo_increment", true)
@@ -42,6 +44,13 @@ func _input(event) -> void:
 			Signals.emit_signal("on_life_change", -1.0)
 			play_text_status_after_note_hit("miss")
 			miss_sound.play()
+
+func play_spotlight_over_button(key: String) -> void:
+	var tween := create_tween()
+	for spotlight in spotlights.get_children():
+		if key == spotlight.spotlight_key:
+			tween.tween_property(spotlight, "color:a", 0.3, 0.1)
+			tween.tween_property(spotlight, "color:a", 0.0, 0.25)
 
 func play_particles_after_note_hit(color: String) -> void:
 	var explosion_particle_instance := preload("res://Common/Particles/Explosion/explosion.tscn").instantiate()
